@@ -5,8 +5,11 @@ Stair::Stair(int sensorPin, int ledPins[3], Color colors[])
 {
   state = 0; // index of color in colors
   isSteppedOn = false;
+  sensorPin = *sensorPin;
+  Serial.println(sensorPin);
 
   _numOfColors = (sizeof(colors)/sizeof(Color));
+
 
   // set up pins 
   for (int p = 0; p < _numLedPins ; p++) {
